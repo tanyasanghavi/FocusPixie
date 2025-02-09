@@ -1,4 +1,5 @@
-// Load face-api.js models
+// Loading face-api.js models for facial landmarks, expressions, and recognition
+// Promise.all ensures all models are loaded 
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
   faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
@@ -21,7 +22,7 @@ function startApp() {
       videoElement.srcObject = stream;
     })
     .catch(err => {
-      console.error('Error accessing the webcam:', err);
+      console.error('Error accessing the webcam:', err); //Used to handle errors
     });
 }
 
