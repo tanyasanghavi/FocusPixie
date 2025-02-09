@@ -30,7 +30,7 @@ function startApp() {
 function updateCanvas() {
   if (!videoElement || !canvas) return;
 
-  // Set canvas dimensions to match video dimensions
+  // Set canvas dimensions to match the video dimensions
   canvas.style.left = videoElement.offsetLeft + 'px';
   canvas.style.top = videoElement.offsetTop + 'px';
   canvas.style.width = videoElement.offsetWidth + 'px';
@@ -55,10 +55,10 @@ function startTimer() {
 
     updateCanvas(); // Ensure initial canvas dimensions are set
 
-    // Keep updating canvas dimensions every 100ms
+    // Keep updating canvas dimensions every 50ms
     setInterval(updateCanvas, 50);
 
-    // Run face detection every 100ms
+    // Run face detection every 50ms
     setInterval(detectExpressions, 50);
     
   }
@@ -77,7 +77,7 @@ function startTimer() {
   }
 }
 
-// Pause face tracking
+// Pause face tracking when user presses the pause button
 function pauseTimer() {
   isTracking = false;
   videoElement.style.display = 'none';
