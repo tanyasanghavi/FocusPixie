@@ -13,6 +13,7 @@ body {
 .container {
     text-align: center;
     background-color: #fff;
+    width: 80vh;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -21,6 +22,25 @@ body {
 h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+}
+
+.settings {
+    margin-bottom: 2rem;
+}
+
+.settings label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.settings input {
+    width: 60px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
 .pomodoro-timer {
@@ -50,6 +70,9 @@ button:hover {
 
 .recording-section {
     margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+
 }
 
 #video {
