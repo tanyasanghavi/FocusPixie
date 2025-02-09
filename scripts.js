@@ -107,4 +107,6 @@ const efficiencyChart = new Chart(ctx, {
             }
         }
     }
+
+    
 });
