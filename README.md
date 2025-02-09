@@ -1,4 +1,4 @@
-# FocsPixie
+# FocusPixie
 
 # Inspiration
 We wanted to create an AI-powered tool to help students and professionals stay focused by detecting distractions in real time, inspired by the struggle to maintain concentration in a digital world.
