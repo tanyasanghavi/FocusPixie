@@ -1,20 +1,20 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #a6c0fe 0%, #f68084 100%);
+    font-family: 'Arial';
+    background: linear-gradient(135deg, #3263cb 0%, #180961 100%);
     color: #4a4a4a;
-    margin: 0;
+    margin: 0 40px;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     height: 100vh;
-    overflow: hidden;
+    overflow: auto;
     cursor: url('wand.cur'), auto;
 }
 
 .container {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(216, 231, 255, 0.8);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -50,22 +50,23 @@ h1 {
 }
 
 .pomodoro-timer {
+    margin-top: 5rem;
     margin-bottom: 2rem;
 }
 
 #timer {
-    font-size: 3rem;
+    font-size: 7rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #6c5ce7;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color: #0d126d;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 button {
     background-color: #6c5ce7;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.7em 1.2rem;
     margin: 0.5rem;
     border-radius: 5px;
     cursor: pointer;
@@ -74,7 +75,7 @@ button {
 }
 
 button:hover {
-    background-color: #5a4fcf;
+    background-color: #1a0f89;
 }
 
 .recording-section {
@@ -107,7 +108,7 @@ button:hover {
     position: absolute;
     width: 10px;
     height: 10px;
-    background: radial-gradient(circle, #ff9a9e, #fad0c4);
+    background: radial-gradient(circle, #02026b, #074ada);
     border-radius: 50%;
     animation: pixieDust 1s linear infinite;
     pointer-events: none;
