@@ -58,11 +58,12 @@
     }
 
     button {
-      background: #efcb7c;
-      color: #402478;
+      background: #978cc3;
+      color: #25114e;
       border: none;
       padding: 15px 30px;
       font-size: 1.1rem;
+      font-weight: bold;
       border-radius: 25px;
       cursor: pointer;
       transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
@@ -88,6 +89,30 @@
       background: #FFD1F4;
       transform: translateY(-3px);
       box-shadow: 0 6px 10px rgba(234, 184, 228, 0.6);
+    }
+
+    .star{
+      position: fixed; 
+      pointer-events: none;
+    }
+
+    .star:before, .star:after{
+      position: absolute;
+      top: 0;
+      left: 0; 
+      content: '\2762';
+      font-size: 4px;
+    }
+
+    .star:before{
+      color: solid;
+      text-shadow: 0 0 3px rgb(250, 250, 188);
+    }
+
+    .star:after{
+      color: rgb(255, 221, 0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     @keyframes pulse {
@@ -124,6 +149,26 @@
   </style>
 </head>
 <body>
+  <script>
+    window.addEventListener('mousemove', function(e) {
+            var arr = [1, 0.9, 0.8, 0.5, 0.2];
+
+            arr.forEach(function(i) {
+                var x = (1 - i) * 75;
+                var star = document.createElement('div');
+
+                star.className = 'star';
+                star.style.top = e.pageY + Math.round(Math.random() * x - x/2) + 'px';
+                star.style.left = e.pageX + Math.round(Math.random() * x - x/2) + 'px';
+                
+                document.body.appendChild(star);
+
+                window.setTimeout(function() {
+                    document.body.removeChild(star);
+                }, Math.round(Math.random()* i * 600));
+            });
+        }, false);
+  </script>
   <div class="container">
     <h1>FocusPixie</h1>
     <div class="timer" id="timer">25:00</div>
