@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fairy Tale Pomodoro Timer</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-image: url('https://media.tenor.com/l0jHhNFxoDgAAAAM/beagle-in-flight-flying.gif'); 
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-family: 'Cinzel', serif;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .timer {
+      font-size: 4rem;
+      margin: 20px 0;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    button {
+      background: #8B4513; 
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #A0522D; 
+    }
+
+    .fairy-tale-text {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pomodoro Timer</h1>
+    <div class="timer" id="timer">25:00</div>
+    <div class="buttons">
+      <button onclick="setTimer(25)">25 Min</button>
+      <button onclick="setTimer(15)">15 Min</button>
+      <button onclick="setTimer(5)">5 Min</button>
+      <button onclick="startTimer()">Start</button>
+      <button onclick="pauseTimer()">Pause</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+    <p class="fairy-tale-text">"Hi fatties"</p>
+  </div>
+
+  <script>
+    let timerInterval;
+    let timeLeft = 1500; 
+    let isPaused = true;
+
+    function updateTimer() {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      document.getElementById('timer').textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (isPaused) {
+        isPaused = false;
+        timerInterval = setInterval(() => {
+          if (timeLeft > 0) {
+            timeLeft--;
+            updateTimer();
+          } else {
+            clearInterval(timerInterval);
+            alert("Time's up! Take a break, wanderer.");
+          }
+        }, 1000);
+      }
+    }
+
+    function pauseTimer() {
+      clearInterval(timerInterval);
+      isPaused = true;
+    }
+
+    function resetTimer() {
+      clearInterval(timerInterval);
+      timeLeft = 1500; 
+      isPaused = true;
+      updateTimer();
+    }
+
+    function setTimer(minutes) {
+      clearInterval(timerInterval);
+      timeLeft = minutes * 60;
+      isPaused = true;
+      updateTimer();
+    }
+
+    updateTimer(); 
+  </script>
+</body>
+</html>
