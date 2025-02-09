@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fairy Tale Pomodoro Timer</title>
+  <title>Focus Pixie</title>
   <style>
     body {
       font-family: 'Georgia', serif;
-      background-image: url('https://media.tenor.com/l0jHhNFxoDgAAAAM/beagle-in-flight-flying.gif'); 
+      background-image: url('https://media.tenor.com/l0jHhNFxoDgAAAAM/beagle-in-flight-flying.gif'); /* Replace with a magical forest image */
       background-size: cover;
       color: #fff;
-      text-align: center;
+      text-align: center; /* Align text to the left */
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start; /* Align container to the left */
       align-items: center;
       height: 100vh;
+      padding-left: 50px; /* Add padding to the left */
     }
 
     .container {
@@ -24,6 +25,7 @@
       padding: 20px;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      max-width: 400px; /* Limit container width */
     }
 
     h1 {
@@ -41,12 +43,12 @@
 
     .buttons {
       display: flex;
-      justify-content: center;
+      flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
       gap: 10px;
     }
 
     button {
-      background: #8B4513; 
+      background: #8B4513; /* Brown color for a rustic feel */
       color: #fff;
       border: none;
       padding: 10px 20px;
@@ -57,7 +59,7 @@
     }
 
     button:hover {
-      background: #A0522D; 
+      background: #A0522D; /* Darker brown on hover */
     }
 
     .fairy-tale-text {
@@ -69,7 +71,8 @@
 </head>
 <body>
   <div class="container">
-    <h1>Pomodoro Timer</h1>
+    <h1>Focus Pixie</h1>
+    <br/>
     <div class="timer" id="timer">25:00</div>
     <div class="buttons">
       <button onclick="setTimer(25)">25 Min</button>
@@ -79,12 +82,12 @@
       <button onclick="pauseTimer()">Pause</button>
       <button onclick="resetTimer()">Reset</button>
     </div>
-    <p class="fairy-tale-text">"Hi fatties"</p>
+    <p class="fairy-tale-text">Put the fries in the bag heart brocken</p>
   </div>
 
   <script>
     let timerInterval;
-    let timeLeft = 1500; 
+    let timeLeft = 1500; // 25 minutes in seconds
     let isPaused = true;
 
     function updateTimer() {
@@ -115,7 +118,7 @@
 
     function resetTimer() {
       clearInterval(timerInterval);
-      timeLeft = 1500; 
+      timeLeft = 1500; // Reset to 25 minutes
       isPaused = true;
       updateTimer();
     }
@@ -127,7 +130,7 @@
       updateTimer();
     }
 
-    updateTimer(); 
+    updateTimer(); // Initialize the timer display
   </script>
 </body>
 </html>
