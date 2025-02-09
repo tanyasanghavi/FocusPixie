@@ -9,7 +9,7 @@ body {
     align-items: left;
     height: 100vh;
     overflow: auto;
-    cursor: url('wand.cur'), auto;
+    cursor: url("wand.jpg"), auto;
 }
 
 .container {
