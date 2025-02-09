@@ -34,5 +34,5 @@ We found it hard to implement the Face API.js into our project and especially co
 - JavaScript
 - VSCode
 
-# Thank you for using FocusPixie
+# Thank you for using FocusPixie!
 
