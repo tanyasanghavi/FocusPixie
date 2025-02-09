@@ -7,65 +7,71 @@
   <style>
     body {
       font-family: 'Georgia', serif;
-      background-image: url('https://media.tenor.com/l0jHhNFxoDgAAAAM/beagle-in-flight-flying.gif'); /* Replace with a magical forest image */
+      background-image: url('https://64.media.tumblr.com/9b79b9ce4f61a4e85a53e7a81b4f5335/5c568c9068c16f93-6a/s500x750/07c0b452aaadcd251620151ab076a2ef2445df3d.gifv');
       background-size: cover;
       color: #fff;
-      text-align: center; 
+      text-align: center; /* Align text to the left */
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: flex-start; 
+      justify-content: flex-start; /* Align container to the left */
       align-items: center;
       height: 100vh;
-      padding-left: 50px; 
+      padding-left: 50px; /* Add padding to the left */
     }
 
     .container {
-      background: #1E1A78;
+      background: rgba(0, 0, 0, 0.7);
       padding: 20px;
       border-radius: 15px;
-      box-shadow: 0 0 35px #503e80;
-      max-width: 400px; 
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      max-width: 400px; /* Limit container width */
     }
 
     h1 {
       font-size: 3rem;
       margin-bottom: 20px;
       font-family: 'Cinzel', serif;
-      text-shadow: 2px 2px 5px #000;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      color: #c8bddf;
     }
 
     .timer {
       font-size: 4rem;
       margin: 20px 0;
-      font-family: 'Cinzel', serif;
+      font-family: 'Cormorant Garamond', serif;
     }
 
     .buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 25px; /* Space between button rows */
     }
 
     button {
-      background: #42357b; 
-      color: #D6D1E0;
+      background: #8B4513; 
+      color: #fff;
       border: none;
       padding: 10px 20px;
       font-size: 1rem;
-      border-radius: 20px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
 
     button:hover {
-      background: #EAB8E4; 
+      background: #A0522D; 
     }
 
     .fairy-tale-text {
       font-size: 1.2rem;
-      margin-top: 20px;
+      margin-top: 25px;
       font-style: italic;
+      color: #D6D1E0;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     }
 
     #video {
@@ -84,25 +90,19 @@
 <body>
     
   <div class="container">
-    <h1>Focus Pixie</h1>
+    <h1>FocusPixie</h1>
     <div class="timer" id="timer">25:00</div>
     <div class="buttons">
       <br>
       <button onclick="setTimer(25)">25 Min</button>
       <button onclick="setTimer(15)">15 Min</button>
-      <button onclick="setTimer(5)"> 5 Min</button>
-    </div>
-    <div>
-        <br>
+      <button onclick="setTimer(5)">5 Min</button>
       <button onclick="startTimer()">Start</button>
-    </div>
-    <div>
-        <br>
       <button onclick="pauseTimer()">Pause</button>
       <button onclick="resetTimer()">Reset</button>
         <br>
     </div>
-    <p class="fairy-tale-text">Select your desired focus time and click start to allow focus tracking</p>
+    <p class="fairy-tale-text">Put the fries in the bag heart brocken</p>
   </div>
 
   <video id="video" width="640" height="480" autoplay muted style="display: none;"></video>
