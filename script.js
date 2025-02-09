@@ -150,14 +150,14 @@ async function detectExpressions() {
       const mouthDistance = Math.abs(landmarks.positions[57].y - landmarks.positions[8].y); // Distance between upper and lower lip
 
       if (mouthDistance > 35) { // Adjust threshold as needed
-        alert('You seem to be yawning. Stay focused!');
+        alert("Focus mode: OFF? Let’s switch it back ON! 🚀");
       }
     }
 
     // Check if the user is looking away (head pose estimation)
     const headPose = faceapi.utils.getHeadPose(detections[0].landmarks);
     if (Math.abs(headPose.angle.yaw) > 10 || Math.abs(headPose.angle.pitch) > 10) {
-      alert('You are looking away. Please focus on the task!');
+      alert("Your focus is doing the cha-cha—let’s get it steady again! 💃🕺");
     }
   }
 
