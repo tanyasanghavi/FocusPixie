@@ -43,12 +43,12 @@
 
     .buttons {
       display: flex;
-      flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+      flex-wrap: wrap;
       gap: 10px;
     }
 
     button {
-      background: #8B4513; /* Brown color for a rustic feel */
+      background: #8B4513; 
       color: #fff;
       border: none;
       padding: 10px 20px;
@@ -59,7 +59,7 @@
     }
 
     button:hover {
-      background: #A0522D; /* Darker brown on hover */
+      background: #A0522D; 
     }
 
     .fairy-tale-text {
@@ -72,7 +72,6 @@
 <body>
   <div class="container">
     <h1>Focus Pixie</h1>
-    <br/>
     <div class="timer" id="timer">25:00</div>
     <div class="buttons">
       <button onclick="setTimer(25)">25 Min</button>
@@ -87,7 +86,7 @@
 
   <script>
     let timerInterval;
-    let timeLeft = 1500; // 25 minutes in seconds
+    let timeLeft = 1500; 
     let isPaused = true;
 
     function updateTimer() {
@@ -118,7 +117,7 @@
 
     function resetTimer() {
       clearInterval(timerInterval);
-      timeLeft = 1500; // Reset to 25 minutes
+      timeLeft = 1500; 
       isPaused = true;
       updateTimer();
     }
@@ -130,7 +129,7 @@
       updateTimer();
     }
 
-    updateTimer(); // Initialize the timer display
+    updateTimer(); 
   </script>
 </body>
 </html>
