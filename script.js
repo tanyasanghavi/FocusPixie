@@ -76,37 +76,6 @@ function startTimer() {
   }
 }
 
-// function startTimer() {
-//   if (!isTracking) {
-//     isTracking = true;
-//     videoElement.style.display = 'block';
-//     canvas.style.display = 'block';
-
-//     // Update canvas dimensions and position
-//     updateCanvas();
-
-//     // Start updating canvas every 100ms
-//     setInterval(updateCanvas, 100);
-
-//     // Start face detection
-//     detectExpressions();
-//   }
-
-//   // Start the timer
-//   if (!timerInterval) {
-//     timerInterval = setInterval(() => {
-//       if (timeLeft > 0) {
-//         timeLeft--;
-//         updateTimerDisplay();
-//       } else {
-//         clearInterval(timerInterval);
-//         alert('Time is up! Great job staying focused!');
-//       }
-//     }, 1000);
-//   }
-// }
-
-
 // Pause face tracking
 function pauseTimer() {
   isTracking = false;
