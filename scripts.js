@@ -1,3 +1,15 @@
+// Pixie Dust Trail
+document.addEventListener('mousemove', (e) => {
+    const pixieDust = document.createElement('div');
+    pixieDust.className = 'pixie-dust';
+    pixieDust.style.left = `${e.pageX}px`;
+    pixieDust.style.top = `${e.pageY}px`;
+    document.body.appendChild(pixieDust);
+    setTimeout(() => {
+        pixieDust.remove();
+    }, 1000);
+});
+
 // Pomodoro Timer
 let timerInterval;
 let timeLeft;
