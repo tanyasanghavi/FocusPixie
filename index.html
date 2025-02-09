@@ -1,39 +1,113 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FocusPixie</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Pixie</title>
+  <script defer src="face-api.min.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-image: url('https://64.media.tumblr.com/9b79b9ce4f61a4e85a53e7a81b4f5335/5c568c9068c16f93-6a/s500x750/07c0b452aaadcd251620151ab076a2ef2445df3d.gifv');
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100vh;
+      padding-left: 50px;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      max-width: 400px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-family: 'Cinzel', serif;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      color: #c8bddf;
+    }
+
+    .timer {
+      font-size: 4rem;
+      margin: 20px 0;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 25px;
+    }
+
+    button {
+      background: #8B4513;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    button:hover {
+      background: #A0522D;
+    }
+
+    .fairy-tale-text {
+      font-size: 1.2rem;
+      margin-top: 25px;
+      font-style: italic;
+      color: #D6D1E0;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    #video {
+      margin-top: 20px;
+      border: 2px solid #8B4513;
+      border-radius: 10px;
+    }
+
+    #overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>FocusPixi</h1>
-        <div class="settings">
-            <label for="work-duration">Work Duration (minutes):</label>
-            <input type="number" id="work-duration" value="25" min="1">
-            
-            <label for="short-break">Short Break (minutes):</label>
-            <input type="number" id="short-break" value="5" min="1">
-            
-            <label for="long-break">Long Break (minutes):</label>
-            <input type="number" id="long-break" value="15" min="1">
-        </div>
-        <div class="pomodoro-timer">
-            <div id="timer">25:00</div>
-            <button id="start-btn">Start</button>
-            <button id="reset-btn">Reset</button>
-        </div>
-        <div class="recording-section">
-            <button id="record-btn">Start Recording</button>
-            <video id="video" autoplay muted></video>
-        </div>
-        <div class="efficiency-graph">
-            <h2>Study Efficiency Over Time</h2>
-            <canvas id="efficiencyChart"></canvas>
-        </div>
+  <div class="container">
+    <h1>FocusPixie</h1>
+    <div class="timer" id="timer">25:00</div>
+    <div class="buttons">
+      <br>
+      <button onclick="setTimer(25)">25 Min</button>
+      <button onclick="setTimer(15)">15 Min</button>
+      <button onclick="setTimer(5)">5 Min</button>
+      <button onclick="startTimer()">Start</button>
+      <button onclick="pauseTimer()">Pause</button>
+      <button onclick="resetTimer()">Reset</button>
+      <br>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
+    <p class="fairy-tale-text">Put the fries in the bag heart broken</p>
+  </div>
+
+  <video id="video" width="640" height="480" autoplay muted style="display: none;"></video>
+  <canvas id="overlay" width="640" height="480" style="display: none;"></canvas>
 </body>
 </html>
