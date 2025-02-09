@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusPixi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>FocusPixi</h1>
+        <div class="pomodoro-timer">
+            <div id="timer">25:00</div>
+            <button id="start-btn">Start</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+        <div class="recording-section">
+            <button id="record-btn">Start Recording</button>
+            <video id="video" autoplay muted></video>
+        </div>
+        <div class="efficiency-graph">
+            <h2>Study Efficiency Over Time</h2>
+            <canvas id="efficiencyChart"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
